@@ -1,0 +1,27 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "STA 5197 Applied Longitudinal Analysis Notes"
+  author: "Elizabeth H. Slate"
+  chapters:
+    - index.qmd
+    - modules/thingstoknow.qmd
+    - modules/intro.qmd
+    - modules/summary.qmd
+    - modules/references.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
+    number-sections: true
+  pdf:
+    documentclass: scrreprt
+    
+execute:
+  freeze: auto  # Re-executes only if source file changed   
+  
+    
