@@ -1,9 +1,13 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+I don't know why this file is called index.qmd.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
-
+Here is an r code block:
 ```{r}
-1 + 1
+TWO <- 1 + 1
 ```
+
+```{latex}
+$$ 
+\Omega = \theta x + \epsilon
+$$
