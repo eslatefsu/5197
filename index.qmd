@@ -5,6 +5,7 @@ I don't know why this file is called index.qmd.
 Here is an r code block:
 ```{r}
 TWO <- 1 + 1
+TWO
 ```
 
 ```{latex}
