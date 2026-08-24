@@ -7,10 +7,11 @@ book:
   author: "Elizabeth H. Slate"
   chapters:
     - index.qmd
-    - modules/thingstoknow.qmd
-    - modules/intro.qmd
-    - modules/summary.qmd
-    - modules/references.qmd
+    - modules/review-of-matrix-differentiation.qmd
+#    - modules/thingstoknow.qmd
+#    - modules/intro.qmd
+#    - modules/summary.qmd
+#    - modules/references.qmd
 
 format:
   html:

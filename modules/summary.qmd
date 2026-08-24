@@ -3,5 +3,15 @@
 In summary, this book has no content whatsoever.
 
 ```{r}
-1 + 1
+TWO <- 1 + 1
+TWO
 ```
+
+$$
+\begin{align*}
+\Omega &= 2\exp{23i + 17x}\\
+\Sigma &= \mbox{Diag}(\mbox{ones})
+\end{align*}
+$$
+Can you solve these equations?
+

@@ -1,11 +1,9 @@
 {
-  "hash": "6b21a250588dde6f79d83bc9a62d55df",
+  "hash": "68fc995a6b2bb258c139f2ac61b75757",
   "result": {
     "engine": "knitr",
-    "markdown": "# Summary\n\nIn summary, this book has no content whatsoever.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n\n",
-    "supporting": [
-      "summary_files"
-    ],
+    "markdown": "# Summary\n\nIn summary, this book has no content whatsoever.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nTWO <- 1 + 1\nTWO\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n\n\n$$\n\\begin{align*}\n\\Omega &= 2\\exp{23i + 17x}\\\\\n\\Sigma &= \\mbox{Diag}(\\mbox{ones})\n\\end{align*}\n$$\nCan you solve these equations?\n\n",
+    "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

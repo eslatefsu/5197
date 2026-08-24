@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; ThingsToKnow – STA 5197 Applied Longitudinal Analysis Notes</title>
+<title>2&nbsp; ThingsToKnow – STA 5197 Applied Longitudinal Analysis Notes</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,7 +34,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../modules/intro.html" rel="next">
-<link href="../index.html" rel="prev">
+<link href="../modules/review-of-matrix-differentiation.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -114,7 +114,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/thingstoknow.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">ThingsToKnow</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/thingstoknow.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">ThingsToKnow</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -147,20 +147,26 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../modules/review-of-matrix-differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">review-of-matrix-differentiation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../modules/thingstoknow.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">ThingsToKnow</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">ThingsToKnow</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../modules/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../modules/summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -179,27 +185,27 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#things-to-know" id="toc-things-to-know" class="nav-link active" data-scroll-target="#things-to-know"><span class="header-section-number">2</span> Things to know:</a>
+  <li><a href="#things-to-know" id="toc-things-to-know" class="nav-link active" data-scroll-target="#things-to-know"><span class="header-section-number">3</span> Things to know:</a>
   <ul class="collapse">
-  <li><a href="#estimation" id="toc-estimation" class="nav-link" data-scroll-target="#estimation"><span class="header-section-number">2.1</span> 3. Estimation</a></li>
-  <li><a href="#gls-estimator-vs.-mle-of-beta" id="toc-gls-estimator-vs.-mle-of-beta" class="nav-link" data-scroll-target="#gls-estimator-vs.-mle-of-beta"><span class="header-section-number">2.2</span> GLS estimator vs.&nbsp;MLE of <span class="math inline">\(\beta\)</span></a></li>
-  <li><a href="#mcar-vs.-mar" id="toc-mcar-vs.-mar" class="nav-link" data-scroll-target="#mcar-vs.-mar"><span class="header-section-number">2.3</span> MCAR vs.&nbsp;MAR</a></li>
-  <li><a href="#reml-vs.-ml" id="toc-reml-vs.-ml" class="nav-link" data-scroll-target="#reml-vs.-ml"><span class="header-section-number">2.4</span> REML vs.&nbsp;ML</a></li>
-  <li><a href="#ols" id="toc-ols" class="nav-link" data-scroll-target="#ols"><span class="header-section-number">2.5</span> OLS</a></li>
-  <li><a href="#likelihood-based-on-y" id="toc-likelihood-based-on-y" class="nav-link" data-scroll-target="#likelihood-based-on-y"><span class="header-section-number">2.6</span> Likelihood based on Y:</a></li>
-  <li><a href="#likelihood-based-on-r" id="toc-likelihood-based-on-r" class="nav-link" data-scroll-target="#likelihood-based-on-r"><span class="header-section-number">2.7</span> Likelihood based on r</a></li>
+  <li><a href="#estimation" id="toc-estimation" class="nav-link" data-scroll-target="#estimation"><span class="header-section-number">3.1</span> 3. Estimation</a></li>
+  <li><a href="#gls-estimator-vs.-mle-of-beta" id="toc-gls-estimator-vs.-mle-of-beta" class="nav-link" data-scroll-target="#gls-estimator-vs.-mle-of-beta"><span class="header-section-number">3.2</span> GLS estimator vs.&nbsp;MLE of <span class="math inline">\(\beta\)</span></a></li>
+  <li><a href="#mcar-vs.-mar" id="toc-mcar-vs.-mar" class="nav-link" data-scroll-target="#mcar-vs.-mar"><span class="header-section-number">3.3</span> MCAR vs.&nbsp;MAR</a></li>
+  <li><a href="#reml-vs.-ml" id="toc-reml-vs.-ml" class="nav-link" data-scroll-target="#reml-vs.-ml"><span class="header-section-number">3.4</span> REML vs.&nbsp;ML</a></li>
+  <li><a href="#ols" id="toc-ols" class="nav-link" data-scroll-target="#ols"><span class="header-section-number">3.5</span> OLS</a></li>
+  <li><a href="#likelihood-based-on-y" id="toc-likelihood-based-on-y" class="nav-link" data-scroll-target="#likelihood-based-on-y"><span class="header-section-number">3.6</span> Likelihood based on Y:</a></li>
+  <li><a href="#likelihood-based-on-r" id="toc-likelihood-based-on-r" class="nav-link" data-scroll-target="#likelihood-based-on-r"><span class="header-section-number">3.7</span> Likelihood based on r</a></li>
   </ul></li>
-  <li><a href="#reml-estimation" id="toc-reml-estimation" class="nav-link" data-scroll-target="#reml-estimation"><span class="header-section-number">3</span> REML estimation</a>
+  <li><a href="#reml-estimation" id="toc-reml-estimation" class="nav-link" data-scroll-target="#reml-estimation"><span class="header-section-number">4</span> REML estimation</a>
   <ul class="collapse">
-  <li><a href="#missing-data" id="toc-missing-data" class="nav-link" data-scroll-target="#missing-data"><span class="header-section-number">3.1</span> Missing Data</a></li>
-  <li><a href="#mar" id="toc-mar" class="nav-link" data-scroll-target="#mar"><span class="header-section-number">3.2</span> 2) MAR</a></li>
-  <li><a href="#mar-1" id="toc-mar-1" class="nav-link" data-scroll-target="#mar-1"><span class="header-section-number">3.3</span> MAR</a></li>
-  <li><a href="#mnar" id="toc-mnar" class="nav-link" data-scroll-target="#mnar"><span class="header-section-number">3.4</span> MNAR</a></li>
-  <li><a href="#two-stage-formulation" id="toc-two-stage-formulation" class="nav-link" data-scroll-target="#two-stage-formulation"><span class="header-section-number">3.5</span> Two-Stage formulation</a></li>
-  <li><a href="#random-intercept" id="toc-random-intercept" class="nav-link" data-scroll-target="#random-intercept"><span class="header-section-number">3.6</span> Random Intercept</a></li>
-  <li><a href="#random-intercept-slope" id="toc-random-intercept-slope" class="nav-link" data-scroll-target="#random-intercept-slope"><span class="header-section-number">3.7</span> Random Intercept &amp; Slope</a></li>
-  <li><a href="#prediction-of-b_i" id="toc-prediction-of-b_i" class="nav-link" data-scroll-target="#prediction-of-b_i"><span class="header-section-number">3.8</span> Prediction of <span class="math inline">\(b_i\)</span></a></li>
-  <li><a href="#homework-exercise-8.1" id="toc-homework-exercise-8.1" class="nav-link" data-scroll-target="#homework-exercise-8.1"><span class="header-section-number">3.9</span> Homework: Exercise 8.1</a></li>
+  <li><a href="#missing-data" id="toc-missing-data" class="nav-link" data-scroll-target="#missing-data"><span class="header-section-number">4.1</span> Missing Data</a></li>
+  <li><a href="#mar" id="toc-mar" class="nav-link" data-scroll-target="#mar"><span class="header-section-number">4.2</span> 2) MAR</a></li>
+  <li><a href="#mar-1" id="toc-mar-1" class="nav-link" data-scroll-target="#mar-1"><span class="header-section-number">4.3</span> MAR</a></li>
+  <li><a href="#mnar" id="toc-mnar" class="nav-link" data-scroll-target="#mnar"><span class="header-section-number">4.4</span> MNAR</a></li>
+  <li><a href="#two-stage-formulation" id="toc-two-stage-formulation" class="nav-link" data-scroll-target="#two-stage-formulation"><span class="header-section-number">4.5</span> Two-Stage formulation</a></li>
+  <li><a href="#random-intercept" id="toc-random-intercept" class="nav-link" data-scroll-target="#random-intercept"><span class="header-section-number">4.6</span> Random Intercept</a></li>
+  <li><a href="#random-intercept-slope" id="toc-random-intercept-slope" class="nav-link" data-scroll-target="#random-intercept-slope"><span class="header-section-number">4.7</span> Random Intercept &amp; Slope</a></li>
+  <li><a href="#prediction-of-b_i" id="toc-prediction-of-b_i" class="nav-link" data-scroll-target="#prediction-of-b_i"><span class="header-section-number">4.8</span> Prediction of <span class="math inline">\(b_i\)</span></a></li>
+  <li><a href="#homework-exercise-8.1" id="toc-homework-exercise-8.1" class="nav-link" data-scroll-target="#homework-exercise-8.1"><span class="header-section-number">4.9</span> Homework: Exercise 8.1</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -209,7 +215,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">ThingsToKnow</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">ThingsToKnow</span></h1>
 </div>
 
 
@@ -227,8 +233,8 @@ window.Quarto = {
 
 
 <!-- page 2 -->
-<section id="things-to-know" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Things to know:</h1>
+<section id="things-to-know" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Things to know:</h1>
 <ol type="1">
 <li><p>The design under which the data were obtained: balanced/unbalanced</p></li>
 <li><p>EDA mean structure</p>
@@ -244,8 +250,8 @@ window.Quarto = {
 </ul></li>
 </ol>
 <!-- page 3 -->
-<section id="estimation" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="estimation"><span class="header-section-number">2.1</span> 3. Estimation</h2>
+<section id="estimation" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="estimation"><span class="header-section-number">3.1</span> 3. Estimation</h2>
 <ul>
 <li>review multiple reg. - <strong>iid errors</strong></li>
 <li><strong>HW</strong>: review <strong>WLS</strong></li>
@@ -315,12 +321,12 @@ window.Quarto = {
 </blockquote>
 <!-- page 7 -->
 </section>
-<section id="gls-estimator-vs.-mle-of-beta" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="gls-estimator-vs.-mle-of-beta"><span class="header-section-number">2.2</span> GLS estimator vs.&nbsp;MLE of <span class="math inline">\(\beta\)</span></h2>
+<section id="gls-estimator-vs.-mle-of-beta" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="gls-estimator-vs.-mle-of-beta"><span class="header-section-number">3.2</span> GLS estimator vs.&nbsp;MLE of <span class="math inline">\(\beta\)</span></h2>
 <p>How to estimate <span class="math inline">\(\Sigma = \Sigma(\theta)\)</span> if using GLS for <span class="math inline">\(\beta\)</span>?</p>
 </section>
-<section id="mcar-vs.-mar" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="mcar-vs.-mar"><span class="header-section-number">2.3</span> MCAR vs.&nbsp;MAR</h2>
+<section id="mcar-vs.-mar" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="mcar-vs.-mar"><span class="header-section-number">3.3</span> MCAR vs.&nbsp;MAR</h2>
 <p>Assign a problem where data are dropped at random (MCAR) &amp; then systematically related to observed <span class="math inline">\(\{y\}\)</span> - MAR. Compare resulting estimates of <span class="math inline">\(\beta, \theta\)</span>.</p>
 <blockquote class="blockquote">
 <p>[!TIP] <strong>MCAR (Missing Completely At Random)</strong> means the probability of data being missing is independent of both observed and unobserved data. <strong>MAR (Missing At Random)</strong> means the probability of missing data is related to the observed data <span class="math inline">\(\{y\}\)</span> but not the unobserved data. This distinction is critical because MAR data can often be handled using likelihood-based methods, whereas MCAR is a stronger, more restrictive assumption.</p>
@@ -328,8 +334,8 @@ window.Quarto = {
 <p>The text motivates GLS using ML. This does not mirror the development from LS. Reconsider with LS motivation leading to GLS.</p>
 <p>By GLS, does the text <strong>ALWAYS</strong> mean that <span class="math inline">\(\Sigma\)</span> is known?</p>
 </section>
-<section id="reml-vs.-ml" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="reml-vs.-ml"><span class="header-section-number">2.4</span> REML vs.&nbsp;ML</h2>
+<section id="reml-vs.-ml" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="reml-vs.-ml"><span class="header-section-number">3.4</span> REML vs.&nbsp;ML</h2>
 <p>Show REML vs.&nbsp;ML est. effect on <span class="math inline">\(\theta\)</span> &amp; that this effect reduces as <span class="math inline">\(N \uparrow (N = \# \text{subjects})\)</span>.</p>
 <p>Derive the REML loglikelihood given in the text (4.8).</p>
 <!-- page 8 -->
@@ -550,8 +556,8 @@ Cov(r) = E[(I-H) y y^T (I-H)^T]
 \]</span></p>
 <!-- page 14 -->
 </figure></section>
-<section id="ols" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="ols"><span class="header-section-number">2.5</span> OLS</h2>
+<section id="ols" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="ols"><span class="header-section-number">3.5</span> OLS</h2>
 <p><span class="math display">\[
 \hat{\beta} = (X^T X)^{-1} X^T Y, \quad \hat{Y} = X \hat{\beta} = HY
 \]</span></p>
@@ -576,8 +582,8 @@ H = X(X^T X)^{-1} X^T
 I - H = I - X(X^T X)^{-1} X^T
 \]</span></p>
 </figure></section>
-<section id="likelihood-based-on-y" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="likelihood-based-on-y"><span class="header-section-number">2.6</span> Likelihood based on Y:</h2>
+<section id="likelihood-based-on-y" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="likelihood-based-on-y"><span class="header-section-number">3.6</span> Likelihood based on Y:</h2>
 <p><span class="math display">\[
 \left(\frac{1}{2\pi}\right)^{n/2} |\sigma^2 I|^{-1/2} \exp\left\{ -\frac{1}{2} (Y - X\beta)^T (\sigma^2 I)^{-1} (Y - X\beta) \right\}
 \]</span></p>
@@ -586,8 +592,8 @@ I - H = I - X(X^T X)^{-1} X^T
 -\frac{n}{2} \log(2\pi) - \frac{1}{2} \log|\sigma^2 I| - \frac{1}{2\sigma^2} (Y - X\beta)^T (Y - X\beta)
 \]</span></p>
 </section>
-<section id="likelihood-based-on-r" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="likelihood-based-on-r"><span class="header-section-number">2.7</span> Likelihood based on r</h2>
+<section id="likelihood-based-on-r" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="likelihood-based-on-r"><span class="header-section-number">3.7</span> Likelihood based on r</h2>
 <p><span class="math display">\[
 \left(\frac{1}{2\pi}\right)^{n/2} |(I-H)\sigma^2|^{-1/2} \exp\left\{ -\frac{1}{2} r^T [(I-H)\sigma^2]^{-1} r \right\}
 \]</span></p>
@@ -642,8 +648,8 @@ l(\theta) &amp;= -\frac{n}{2} \log \theta - \frac{1}{2\theta} r^T (I-H)^{-1} r \
 <!-- page 16 -->
 </section>
 </section>
-<section id="reml-estimation" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> REML estimation</h1>
+<section id="reml-estimation" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> REML estimation</h1>
 <p>Consider first simple linear regression.</p>
 <p><span class="math display">\[y_i = \beta_0 + \beta_1 x_i + e_i\]</span></p>
 <p><span class="math display">\[e_i \sim N(0, \sigma^2) \text{ i.i.d.}\]</span></p>
@@ -893,8 +899,8 @@ l(\beta, \sigma^2) = -\frac{N}{2} \ln(2\pi) - \frac{N}{2} \ln \sigma^2 - \frac{1
 <p>[!TIP] The second step involves setting the derivative to zero to find the maximum likelihood estimator (<span class="math inline">\(\hat{\sigma}^2\)</span>) and multiplying the entire equation by <span class="math inline">\(2\sigma^2\)</span> to simplify the expression, resulting in <span class="math inline">\(-(N-p) + \frac{y^T(I-H)y}{\sigma^2} = 0\)</span>.</p>
 </blockquote>
 <!-- page 26 -->
-<section id="missing-data" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="missing-data"><span class="header-section-number">3.1</span> Missing Data</h2>
+<section id="missing-data" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="missing-data"><span class="header-section-number">4.1</span> Missing Data</h2>
 <p>The rule, not the exception,</p>
 <ol type="1">
 <li>leads to unbalanced data</li>
@@ -943,8 +949,8 @@ f(Y, R \mid X, \theta) &amp;= f(R \mid Y, X, \theta) \cdot f(Y \mid X, \theta) \
 <p>In year 2, due to budget constraints, we randomly select 800 of the 1000 students from year 1 to get <span class="math inline">\(Y_2\)</span>.</p>
 <p>Even if our selection of the 800 students for the year 2 test score is related to a covariate, e.g.&nbsp;sex we take 2/3 girls, 1/3 boys to obtain <span class="math inline">\(Y_2\)</span>.</p>
 </section>
-<section id="mar" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="mar"><span class="header-section-number">3.2</span> 2) MAR</h2>
+<section id="mar" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="mar"><span class="header-section-number">4.2</span> 2) MAR</h2>
 <p><span class="math display">\[
 f(R | Y^{obs}, Y^{mis}, X; \theta) = f(R | Y^{obs}, X; \theta)
 \]</span></p>
@@ -988,15 +994,15 @@ L(\theta) &amp;= \int_{Y^{\text{mis}}} f(R \mid X; \theta) f(Y^{\text{obs}}, Y^{
 <p><span class="math display">\[L(\theta_1, \theta_2) = f(R \mid X; \theta_2) f(Y^{\text{obs}} \mid X; \theta_1)\]</span></p>
 <!-- page 32 -->
 </section>
-<section id="mar-1" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="mar-1"><span class="header-section-number">3.3</span> MAR</h2>
+<section id="mar-1" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="mar-1"><span class="header-section-number">4.3</span> MAR</h2>
 <p><span class="math display">\[f(R \mid y^{\text{obs}}, y^{\text{mis}}, X; \theta) = f(R \mid y^{\text{obs}}, X; \theta)\]</span></p>
 <blockquote class="blockquote">
 <p>[!TIP] <strong>Missing At Random (MAR)</strong> is a condition where the probability of missingness depends only on the observed data (<span class="math inline">\(y^{\text{obs}}\)</span>) and covariates (<span class="math inline">\(X\)</span>), meaning the missingness can be ignored in likelihood-based inference if the parameters <span class="math inline">\(\theta\)</span> are distinct.</p>
 </blockquote>
 </section>
-<section id="mnar" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="mnar"><span class="header-section-number">3.4</span> MNAR</h2>
+<section id="mnar" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="mnar"><span class="header-section-number">4.4</span> MNAR</h2>
 <blockquote class="blockquote">
 <p>[!TIP] <strong>Missing Not At Random (MNAR)</strong> occurs when the probability of missingness depends on the missing values themselves (<span class="math inline">\(y^{\text{mis}}\)</span>). Unlike MAR, the missingness mechanism is non-ignorable, and the distribution of the missing data cannot be recovered from the observed data without making explicit assumptions about the missingness mechanism.</p>
 </blockquote>
@@ -1023,15 +1029,15 @@ E(Y_i) &amp;= X_i \beta \\
 <p><span class="math inline">\(\quad \quad \quad \quad \quad \quad \quad \quad q \times q\)</span> (annotated under <span class="math inline">\(Z_i G Z_i^T\)</span>)</p>
 <!-- page 34 -->
 </section>
-<section id="two-stage-formulation" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="two-stage-formulation"><span class="header-section-number">3.5</span> Two-Stage formulation</h2>
-<section id="stage-i" class="level3" data-number="3.5.1">
-<h3 data-number="3.5.1" class="anchored" data-anchor-id="stage-i"><span class="header-section-number">3.5.1</span> Stage I:</h3>
+<section id="two-stage-formulation" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="two-stage-formulation"><span class="header-section-number">4.5</span> Two-Stage formulation</h2>
+<section id="stage-i" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="stage-i"><span class="header-section-number">4.5.1</span> Stage I:</h3>
 <p><span class="math display">\[Y_i = Z_i \beta_i + \varepsilon_i\]</span></p>
 <p>Typically <span class="math inline">\(Z_i\)</span> contains a col.&nbsp;of 1s, so <span class="math inline">\(\beta_i\)</span> contains an intercept, so other vars in <span class="math inline">\(Z_i\)</span> must vary within subj.</p>
 </section>
-<section id="stage-ii" class="level3" data-number="3.5.2">
-<h3 data-number="3.5.2" class="anchored" data-anchor-id="stage-ii"><span class="header-section-number">3.5.2</span> Stage II:</h3>
+<section id="stage-ii" class="level3" data-number="4.5.2">
+<h3 data-number="4.5.2" class="anchored" data-anchor-id="stage-ii"><span class="header-section-number">4.5.2</span> Stage II:</h3>
 <p><span class="math display">\[\beta_i = A_i \beta + b_i\]</span></p>
 <p>here <span class="math inline">\(A_i\)</span> is a design matrix <span class="math inline">\(\beta\)</span> are constants (fixed effects) <span class="math inline">\(b_i\)</span> are random <span class="math inline">\(b_i \sim N(0, G)\)</span></p>
 <p><span class="math display">\[E(\beta_i) = A_i \beta\]</span> <span class="math display">\[Var(\beta_i) = G\]</span></p>
@@ -1049,8 +1055,8 @@ Y_i &amp;= Z_i(A_i \beta + b_i) + \varepsilon_i \\
 <!-- page 35 -->
 </section>
 </section>
-<section id="random-intercept" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="random-intercept"><span class="header-section-number">3.6</span> Random Intercept</h2>
+<section id="random-intercept" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="random-intercept"><span class="header-section-number">4.6</span> Random Intercept</h2>
 <p><span class="math display">\[
 \begin{aligned}
 Y_{ij} &amp;= \beta_0 + \beta_1 t_{ij} + b_i + \epsilon_{ij} \\
@@ -1059,8 +1065,8 @@ Y_{ij} &amp;= \beta_0 + \beta_1 t_{ij} + b_i + \epsilon_{ij} \\
 \]</span></p>
 <p><span class="math display">\[b_i \sim N(0, \sigma_b^2) \quad R_i = \sigma^2 I\]</span></p>
 </section>
-<section id="random-intercept-slope" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="random-intercept-slope"><span class="header-section-number">3.7</span> Random Intercept &amp; Slope</h2>
+<section id="random-intercept-slope" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="random-intercept-slope"><span class="header-section-number">4.7</span> Random Intercept &amp; Slope</h2>
 <p><span class="math display">\[
 \begin{aligned}
 Y_{ij} &amp;= \beta_0 + \beta_1 t_{ij} + b_{i1} + b_{i2} t_{ij} + \epsilon_{ij} \\
@@ -1081,8 +1087,8 @@ H_1 &amp;: \text{Rand Int and Slope}
 </blockquote>
 <!-- page 36 -->
 </section>
-<section id="prediction-of-b_i" class="level2" data-number="3.8">
-<h2 data-number="3.8" class="anchored" data-anchor-id="prediction-of-b_i"><span class="header-section-number">3.8</span> Prediction of <span class="math inline">\(b_i\)</span></h2>
+<section id="prediction-of-b_i" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="prediction-of-b_i"><span class="header-section-number">4.8</span> Prediction of <span class="math inline">\(b_i\)</span></h2>
 <p><span class="math display">\[\hat{b}_i = E(b_i | Y_i; \hat{\beta}, \hat{G}, \hat{R}_i)\]</span></p>
 <p><span class="math display">\[f(b_i | Y_i) = \frac{f(Y_i | b_i) f(b_i)}{\int f(Y_i | b_i) f(b_i) \, db_i}\]</span></p>
 <p><strong>(posterior for <span class="math inline">\(b_i\)</span>)</strong></p>
@@ -1101,8 +1107,8 @@ H_1 &amp;: \text{Rand Int and Slope}
 \end{aligned}
 \]</span></p>
 </section>
-<section id="homework-exercise-8.1" class="level2" data-number="3.9">
-<h2 data-number="3.9" class="anchored" data-anchor-id="homework-exercise-8.1"><span class="header-section-number">3.9</span> Homework: Exercise 8.1</h2>
+<section id="homework-exercise-8.1" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="homework-exercise-8.1"><span class="header-section-number">4.9</span> Homework: Exercise 8.1</h2>
 <p>here <span class="math inline">\(R_i = \sigma^2 I\)</span></p>
 <p>Examine the estimated correlation of <span class="math inline">\(Y_i\)</span> for the 2 models (random int, random int and slope)</p>
 
@@ -1513,13 +1519,13 @@ H_1 &amp;: \text{Rand Int and Slope}
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="../modules/review-of-matrix-differentiation.html" class="pagination-link" aria-label="review-of-matrix-differentiation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">review-of-matrix-differentiation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../modules/intro.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
